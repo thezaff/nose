@@ -1,0 +1,352 @@
+/* Chat Window Styles */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.empty-chat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Chat Message Styles */
+.chat-message {
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #0080ff;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.agent-message {
+    align-self: flex-start;
+    background-color: white;
+    color: #333;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.user-message .message-header {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.agent-message .message-header {
+    color: #6c757d;
+}
+
+.message-role {
+    font-weight: bold;
+}
+
+.message-time {
+    font-size: 0.7rem;
+}
+
+.message-content {
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.message-references {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.node-reference {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Message Container and Node Creation */
+.message-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create-node-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 2;
+}
+
+.message-container:hover .create-node-btn {
+    opacity: 1;
+}
+
+/* Chat Input Styles */
+.chat-input-container {
+    display: flex;
+    padding: 1rem;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    gap: 0.5rem;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    resize: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: #0080ff;
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.2);
+}
+
+.send-button {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    background-color: #0080ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-button:hover {
+    background-color: #0066cc;
+}
+
+.send-button:disabled {
+    background-color: #b3e0ff;
+    cursor: not-allowed;
+}
+
+/* Agent Suggestions Styles */
+.agent-suggestions {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    border-left: 4px solid #0080ff;
+}
+
+.agent-suggestions h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #0066cc;
+}
+
+.agent-suggestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.suggestion-content {
+    flex: 1;
+}
+
+.suggestion-type {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #0080ff;
+    margin-bottom: 0.25rem;
+}
+
+.suggestion-description {
+    font-size: 0.9rem;
+}
+
+.suggestion-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.approve-button,
+.reject-button {
+    padding: 0.4rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.approve-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.approve-button:hover {
+    background-color: #218838;
+}
+
+.reject-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reject-button:hover {
+    background-color: #c82333;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    animation: pulse 1.4s infinite;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Related Nodes Styles */
+.related-nodes {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    border-left: 4px solid #0080ff;
+}
+
+.related-nodes-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #0066cc;
+}
+
+.related-nodes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.related-node-item {
+    padding: 0.75rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.related-node-item:hover {
+    background-color: #f5f5f5;
+}
+
+.related-node-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.related-node-preview {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.related-node-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.related-node-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #e3f2fd;
+    color: #0066cc;
+    border-radius: 12px;
+}
+
+.related-nodes-footer {
+    margin-top: 0.75rem;
+    text-align: right;
+}
+
+.view-all-link {
+    font-size: 0.85rem;
+    color: #0080ff;
+    text-decoration: none;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}

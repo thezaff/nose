@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        font-family: 'Inter', system-ui, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply m-0 min-w-[320px] min-h-screen;
+    }
+
+    #root {
+        @apply w-full h-screen;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-sans;
+    }
+
+    code,
+    pre {
+        @apply font-mono;
+    }
+}
+
+/* Dark mode styles */
+.dark {
+    @apply bg-dark-background text-dark-text;
+}
+
+/* Light mode styles */
+.light {
+    @apply bg-light-background text-light-text;
+}
+
+/* Transition for theme switching */
+.theme-transition {
+    @apply transition-colors duration-200;
+}

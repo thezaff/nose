@@ -1,0 +1,1 @@
+export { useChatKnowledge } from './useChatKnowledge';
