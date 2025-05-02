@@ -9,6 +9,7 @@ lerna-debug.log*
 
 # Dependencies
 node_modules
+./node_modules
 .pnp
 .pnp.js
 
@@ -35,6 +36,3 @@ build
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Coverage directory
-coverage
