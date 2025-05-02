@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\zkhod\\code\\nose\\code\\backend\\logs\\.14cec351b129536cbbe6833270b9a4b20e757877-audit.json",
+    "files": [
+        {
+            "date": 1746209094418,
+            "name": "C:\\Users\\zkhod\\code\\nose\\code\\backend\\logs\\application-2025-05-02.log",
+            "hash": "c1aa3c55d015c331aecc4e430d182afab8c7da0ea41c3a1022ad7e63a795e342"
+        }
+    ],
+    "hashType": "sha256"
+}
